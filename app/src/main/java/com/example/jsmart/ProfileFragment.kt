@@ -33,8 +33,8 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        auth = Firebase.auth
-        dbHelper = DatabaseHelper(requireContext()) // Corrected context passing
+        auth = FirebaseAuth.getInstance()
+        dbHelper = DatabaseHelper(requireContext())
 
         binding.ibSignOut.setOnClickListener {
             signOutUser()

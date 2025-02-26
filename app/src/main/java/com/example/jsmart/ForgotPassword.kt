@@ -5,13 +5,8 @@ import android.text.TextUtils
 import android.util.Patterns
 import android.view.View
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.jsmart.databinding.ActivityForgotPasswordBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class ForgotPassword : BaseActivity() {
     private var binding:ActivityForgotPasswordBinding? = null
@@ -21,7 +16,7 @@ class ForgotPassword : BaseActivity() {
         enableEdgeToEdge()
         binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
         binding?.btnForgotPasswordSubmit?.setOnClickListener {
             resetPassword()
@@ -31,7 +26,7 @@ class ForgotPassword : BaseActivity() {
 
     private fun validateForm(email: String): Boolean {
         return when {
-            TextUtils.isEmpty(email) && !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+            TextUtils.isEmpty(email)||!Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
                 binding?.etForgotEmailAddress?.error = "Enter valid email address"
                 false
             }

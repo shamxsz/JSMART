@@ -200,12 +200,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
-                    android:text="....."
+                    android:layout_marginTop="35dp"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginRight="10dp"
+                    android:text=".."
                     android:textColor="@color/white"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"/>
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/ivLogo"
@@ -213,6 +215,7 @@
                     android:layout_height="80dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
                     android:src="@drawable/logob"
                     app:shapeAppearanceOverlay="@style/CircleShape" />
 

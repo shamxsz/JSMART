@@ -20,7 +20,7 @@ class SignUpScreen : BaseActivity() {
         enableEdgeToEdge()
         binding = ActivitySignUpScreenBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
         binding?.tvLoginPage?.setOnClickListener {
             startActivity(Intent(this,LoginScreen::class.java))
             finish()
@@ -41,7 +41,7 @@ class SignUpScreen : BaseActivity() {
                     if (task.isSuccessful) {
                         val firebaseUser = auth.currentUser
                         firebaseUser?.let {
-                            val userInfo = User(it.uid, name, email, null) // Store user info in SQLite
+                            val userInfo = User(it.uid, name, email, null)
                             dbHelper.insertUser(userInfo)
                         }
 
@@ -64,7 +64,7 @@ class SignUpScreen : BaseActivity() {
                 binding?.etName?.error = "Enter Name"
                 false
             }
-            TextUtils.isEmpty(email) && !Patterns.EMAIL_ADDRESS.matcher(email).matches()->{
+            TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()->{
                 binding?.etEmailAddress?.error = "Enter valid email address"
                 false
             }

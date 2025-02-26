@@ -16,8 +16,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class LoginScreen : BaseActivity() {
     private var binding: ActivityLoginScreenBinding? = null
@@ -31,8 +29,8 @@ class LoginScreen : BaseActivity() {
         binding = ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
-        auth = Firebase.auth
-        dbHelper = DatabaseHelper(this) // Initialize SQLite database
+        auth = FirebaseAuth.getInstance()
+        dbHelper = DatabaseHelper(this)
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -112,8 +110,7 @@ class LoginScreen : BaseActivity() {
                     val existingUser = dbHelper.getUserById(it.uid)
 
                     if (existingUser == null) {
-                        // Store user only if they are not already in SQLite
-                        val userInfo = User(it.uid, it.displayName ?: "Unknown", it.email ?: "", it.photoUrl?.toString())
+                        val userInfo = User(it.uid, it.displayName ?: "Guest", it.email ?: "", it.photoUrl?.toString())
                         dbHelper.insertUser(userInfo)
                     }
                 }
