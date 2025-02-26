@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "632892817817",
+    "project_id": "jsmart-ee8b6",
+    "storage_bucket": "jsmart-ee8b6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632892817817:android:483a1f19199442e1285308",
+        "android_client_info": {
+          "package_name": "com.example.jsmart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzyEutXMCcuCGJr8NDDJjS8WVhjFBBkIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
