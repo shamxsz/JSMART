@@ -71,19 +71,36 @@
 
     <EditText
         android:id="@+id/etName"
-        android:layout_width="300dp"
+        android:layout_width="160dp"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/sgnpbtn"
         android:ems="10"
-        android:paddingLeft="12dp"
-        android:hint="  Full Name"
+        android:hint="  First Name"
         android:inputType="text"
+        android:paddingLeft="12dp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreate" />
+
+    <EditText
+        android:id="@+id/etLastName"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:background="@drawable/sgnpbtn"
+        android:ems="10"
+        android:hint="Last Name"
+        android:inputType="text"
+        android:paddingLeft="12dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/etEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toEndOf="@+id/etName"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreate"
+        app:layout_constraintVertical_bias="0.656" />
 
     <EditText
         android:id="@+id/etEmailAddress"

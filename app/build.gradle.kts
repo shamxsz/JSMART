@@ -42,13 +42,14 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.androidx.core.splashscreen)
+    implementation (libs.glide)
+    implementation (libs.gson)
     implementation(libs.firebase.database)
     implementation(libs.firebase.storage.ktx)
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
-    implementation(platform("com.google.firebase:firebase-bom:33.9.0"))
-    implementation("com.google.android.gms:play-services-auth:21.3.0")
+    annotationProcessor (libs.compiler)
+    implementation(libs.firebase.bom)
+    implementation(libs.play.services.auth)
 
     implementation(libs.firebase.auth)
     implementation(libs.androidx.core.ktx)

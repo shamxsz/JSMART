@@ -1,0 +1,19 @@
+{
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Introduction",
+      "content":  "JavaScript is the most popular programming language in the world.\nJavaScript is a programming language used to make web pages interactive.\nJavaScript, often abbreviated to JS, is the default language of the internet. But it doesn’t stop there, JavaScript powers your smart tv, works with the internet of things, and helps build cross platform apps."
+    },
+    {
+      "id": 2,
+      "title": "Variables",
+      "content": "Variables are used to store data in JavaScript."
+    },
+    {
+      "id": 3,
+      "title": "Strings",
+      "content": "Strings are sequences of characters enclosed in quotes."
+    }
+  ]
+}
